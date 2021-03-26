@@ -8,7 +8,7 @@ env:
     -PIPENV_IGNORE_VIRTUALENVS=1
 
 install:
-  - pip install -q pipenv
+  - pip install -q pipenv codecov
   - pipenv sync --dev
   - cp contrib/env-sample .env
 
