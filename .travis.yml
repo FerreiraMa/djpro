@@ -10,8 +10,13 @@ env:
 install:
   - pip install -q pipenv
   - pipenv sync --dev
+  - cp contrib/env-sample .env
 
 script:
-  - pipenv run flake8
+  - pipenv run flake8 .
+  - pipenv run pytest --cov=pypro
+
+after_success:
+  - pipenv run codecov
 
 
