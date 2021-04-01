@@ -19,7 +19,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 import dj_database_url
 from decouple import config, Csv
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -164,7 +164,6 @@ if AWS_ACCESS_KEY_ID:
 
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
-
     COLLECTFAST_ENABLED = True
 
     AWS_DEFAULT_ACL = 'private'
