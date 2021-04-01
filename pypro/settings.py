@@ -147,7 +147,9 @@ COLLECTFAST_ENABLED = False
 
 # Alterado a variável  AWS_ACCESS_KEY_ID após instalação do Django Debug Toolbar
 
-AWS_ACCESS_KEY_ID = config('DJANGO_AWS_ACCESS_KEY_ID', default=False)
+# AWS_ACCESS_KEY_ID = config('DJANGO_AWS_ACCESS_KEY_ID', default=False)
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
 # STORAGE CONFIGURATION IN S3 AWS
 # -------------------------------------------------------------------------
